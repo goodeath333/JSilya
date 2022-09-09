@@ -6,35 +6,35 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel="stylesheet" href="/styles/style.css">
 </head>
 
 <body>
-	<h1>Вот она страница с модальным окном.</h1>
-	<!-- <script>
-		let result = +prompt("Введите свой возраст");
+	<div>
+		<div
+			style="display: flex;flex-direction: column;width: auto;justify-content: space-between;align-content: center;flex-wrap: wrap;align-items: center;">
+			<h1>Задание по JAVASCRIPT</h1>
+			<p>Имя:</p>
+			<input class="name" type="text">
+			<p>Фамилия:</p>
+			<input class="surname" type="text">
+			<br>
+			<input class="btn" type="button" value="Отправить">
+			<p>Ответ: <span class="result"></span></p>
+		</div>
+		<div>
+		</div>
+	</div>
 
-		if (result >= 80) {
-			alert("Ты куда рыпаешься старче?");
-		}
-		else if (result < 18) {
-			alert("По закону вам еще рано трахаться");
-		}
-		else if (result >= 18) {
-			alert("Трахайтесь на здоровье");
-		}
-	</script> -->
+
 	<script>
-		let N = +prompt("Введите кол-во товаров:", 0);
-		let price = 0; //обнуляем начальное значение
-		let total = 0; //обнуляем начальное значение
+		nameElement = document.querySelector(".name");
+		surnameElement = document.querySelector(".surname");
+		btnElement = document.querySelector(".btn");
+		resultElement = document.querySelector(".result");
 
-		for (let i = 0; i < N; i++) {
-			price = +prompt("Введите стоимость товара:", 0); //записали очередное значение цены в price
-			total = total + price;         //к total прибавляем стоимость товара
-		}
-
-		alert(`Общая сумма покупки: ${total}`) //выводим результат
+		btnElement.addEventListener("click", function () {
+			resultElement.textContent = `Здравствуйте, ${nameElement.value} ${surnameElement.value}!`
+		});
 	</script>
 </body>
 
